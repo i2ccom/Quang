@@ -1,34 +1,61 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="50%" stop-color="#fbbf24"/>
-      <stop offset="100%" stop-color="#fcd34d"/>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="40%" stop-color="#fbbf24"/>
+      <stop offset="80%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.9"/>
+    <linearGradient id="beam-diag" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Rays of light -->
-  <polygon points="120,100 40,0 100,10" fill="url(#ray)" opacity="0.3"/>
-  <polygon points="120,100 30,50 90,30" fill="url(#ray)" opacity="0.5"/>
-  <polygon points="120,100 10,100 70,80" fill="url(#ray)" opacity="0.3"/>
-  <polygon points="120,100 30,150 90,170" fill="url(#ray)" opacity="0.5"/>
-  <polygon points="120,100 40,200 100,190" fill="url(#ray)" opacity="0.3"/>
+  <!-- Outer glow -->
+  <circle cx="110" cy="100" r="56" fill="url(#sun)" opacity="0.12"/>
 
-  <!-- Light source / diamond -->
-  <circle cx="120" cy="100" r="24" fill="url(#g)" opacity="0.15"/>
-  <polygon points="120,60 150,100 120,140 90,100" fill="url(#g)" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Light beams radiating outward -->
+  <g opacity="0.5">
+    <!-- Top -->
+    <polygon points="110,40 100,0 120,0" fill="url(#beam)"/>
+    <polygon points="110,40 102,-5 118,-5" fill="url(#beam-diag)" opacity="0.7"/>
+    <!-- Top-right -->
+    <polygon points="150,60 180,25 190,35" fill="url(#beam-diag)" opacity="0.6"/>
+    <!-- Right -->
+    <polygon points="170,100 210,92 210,108" fill="url(#beam)"/>
+    <!-- Bottom-right -->
+    <polygon points="150,140 180,175 190,165" fill="url(#beam-diag)" opacity="0.6"/>
+    <!-- Bottom -->
+    <polygon points="110,160 100,200 120,200" fill="url(#beam)"/>
+    <!-- Bottom-left -->
+    <polygon points="70,140 40,175 30,165" fill="url(#beam-diag)" opacity="0.6"/>
+    <!-- Left -->
+    <polygon points="50,100 30,92 30,108" fill="url(#beam)"/>
+    <!-- Top-left -->
+    <polygon points="70,60 40,25 30,35" fill="url(#beam-diag)" opacity="0.6"/>
+
+    <!-- Intermediate rays -->
+    <polygon points="135,55 145,30 155,35" fill="url(#beam)" opacity="0.4"/>
+    <polygon points="155,135 165,160 175,155" fill="url(#beam)" opacity="0.4"/>
+    <polygon points="65,65 35,45 40,35" fill="url(#beam)" opacity="0.4"/>
+    <polygon points="65,135 55,160 45,155" fill="url(#beam)" opacity="0.4"/>
+  </g>
+
+  <!-- Sun body -->
+  <circle cx="110" cy="100" r="28" fill="url(#sun)" stroke="#f59e0b" stroke-width="1.5"/>
 
   <!-- QUANG text -->
-  <text x="190" y="120" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" letter-spacing="8" fill="#f8fafc">
+  <text x="170" y="120" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" letter-spacing="8" fill="#f8fafc">
     QUANG
   </text>
 
   <!-- Subtitle -->
-  <text x="195" y="155" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="18" letter-spacing="4" fill="#94a3b8">
+  <text x="175" y="155" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="17" letter-spacing="5" fill="#94a3b8">
     AI-FIRST · AGENT-NATIVE WEB FRAMEWORK
   </text>
 </svg>
