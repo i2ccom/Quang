@@ -1,7 +1,7 @@
 # Quang
 
 <p align="center">
-  <em>Vietnamese: <strong>Light</strong> — an AI-first, agent-native web framework by i2c</em>
+  <img src="docs/assets/quang-logo.svg" alt="Quang Logo" width="100%">
 </p>
 
 **Quang** compresses the fragmented modern web stack into one unified, typed, graph-aware platform. One prompt creates a full-stack app. Agents build, humans review, the platform ships.
