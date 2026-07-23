@@ -4,3 +4,5 @@
 *.pdb
 .DS_Store
 crash.log
+# Windows reserved name
+crates/quang-hub-workplace/nul

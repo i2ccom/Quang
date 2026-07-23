@@ -1,0 +1,22 @@
+[application]
+name = "QuangHub"
+default_platform = "web"
+out_dir = "target/dx"
+asset_dir = "public"
+html_title = "QuangHub"
+
+[web.app]
+crate_type = "bin"
+binary = "./"
+
+[web.watcher]
+reload_html = true
+watch_path = ["src", "public"]
+
+[web.resource]
+style = []
+script = []
+
+[web.resource.dev]
+style = []
+script = []
