@@ -1,0 +1,29 @@
+[package]
+name = "quang-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Quang core domain model — Task, Job, Workflow, Agent, Cost, Policy"
+
+[dependencies]
+# Workspace
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+uuid.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+indexmap.workspace = true
+
+# Jigsaw — evidence model & content-addressed identity
+# jigsaw-core is lightweight: only depends on jigsaw-canonical (blake3 + unicode-normalization)
+jigsaw-core = { git = "https://github.com/atomixnmc/Jigsaw", tag = "v0.1.0" }
+
+# minh-agent — Tool trait, SecurityContext, PermissionLevel (optional, heavy deps)
+minh-agent = { git = "https://github.com/i2ccom/MinhAI", optional = true }
+
+[features]
+default = []
+# Enable minh-agent bridge for Tool trait integration
+agent-bridge = ["minh-agent"]

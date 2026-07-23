@@ -1,0 +1,6 @@
+/target/
+/tmp/
+**/*.rs.bk
+*.pdb
+.DS_Store
+crash.log

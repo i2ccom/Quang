@@ -1,0 +1,41 @@
+[workspace]
+members = [
+    "crates/quang-core",
+    "crates/quang-hub-workplace",
+    "crates/quang-hub-meet",
+    "crates/quang-hub-app",
+    "crates/quang-hub-cloud",
+    "crates/quang-hub-repo",
+    "crates/quang-hub-ts",
+    "crates/quang-shai-ao",
+    "crates/quang-web",
+]
+
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = "1"
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4", "serde", "js"] }
+thiserror = "1"
+tokio = { version = "1", default-features = false, features = ["sync", "macros", "rt"] }
+tracing = "0.1"
+indexmap = { version = "2", features = ["serde"] }
+
+[profile]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
